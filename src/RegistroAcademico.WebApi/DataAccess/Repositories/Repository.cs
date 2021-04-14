@@ -12,7 +12,7 @@ namespace RegistroAcademico.WebApi.DataAccess.Repositories
         private readonly DbSet<TEntity> _dbSet;
         protected readonly DbContext Context;
 
-        protected Repository(DbContext context)
+        protected Repository(AppDbContext context)
         {
             Context = context;
             _dbSet = context.Set<TEntity>();

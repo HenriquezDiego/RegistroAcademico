@@ -10,9 +10,13 @@ namespace RegistroAcademico.WebApi.DataAccess
         public DbSet<Matricula> Matriculas { get; set; }
         public DbSet<Asistencia> Asistencias { get; set; }
 
+        public AppDbContext()
+        {
+
+        }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+
         }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RegistroAcademico.WebApi.DataAccess;
+using RegistroAcademico.WebApi.DataAccess.Repositories;
 
 namespace RegistroAcademico.WebApi
 {
@@ -34,6 +35,8 @@ namespace RegistroAcademico.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RegistroAcademico.WebApi", Version = "v1" });
             });
+
+            services.AddTransient<IMateriaRepository,MateriaRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
