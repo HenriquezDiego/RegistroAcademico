@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RegistroAcademico.WebApi.DataAccess.Repositories;
 
@@ -8,23 +9,27 @@ namespace RegistroAcademico.WebApi.Controllers
     public class MateriaController : ControllerBase
     {
         private readonly IMateriaRepository _repository;
+        public IMapper Mapper { get; }
 
-        public MateriaController(IMateriaRepository repository)
+        public MateriaController(IMateriaRepository repository, IMapper mapper)
         {
+            this.Mapper = mapper;
             _repository = repository;
         }
 
         [HttpGet]
-        public IActionResult GetAll(){
-           var values = _repository.GetAll();
-           if(values == null) return BadRequest();
-           return Ok(values);
+        public IActionResult GetAll()
+        {
+            var values = _repository.GetAll();
+            if (values == null) return BadRequest();
+            return Ok(values);
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id){
+        public IActionResult Get(int id)
+        {
             var value = _repository.Get(id);
-            if(value == null) return BadRequest();
+            if (value == null) return BadRequest();
             return Ok(value);
         }
     }

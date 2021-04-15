@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,7 @@ namespace RegistroAcademico.WebApi
             .AddAuthorization()
             .AddApiExplorer();
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<AppDbContext>(opt=>
             {
                 opt.UseSqlServer(_configuration.GetConnectionString("MainConnection"));
@@ -37,6 +39,7 @@ namespace RegistroAcademico.WebApi
             });
 
             services.AddTransient<IMateriaRepository,MateriaRepository>();
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
