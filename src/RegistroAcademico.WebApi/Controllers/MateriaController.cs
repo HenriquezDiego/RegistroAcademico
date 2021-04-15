@@ -20,5 +20,12 @@ namespace RegistroAcademico.WebApi.Controllers
            if(values == null) return BadRequest();
            return Ok(values);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(int id){
+            var value = _repository.Get(id);
+            if(value == null) return BadRequest();
+            return Ok(value);
+        }
     }
 }
