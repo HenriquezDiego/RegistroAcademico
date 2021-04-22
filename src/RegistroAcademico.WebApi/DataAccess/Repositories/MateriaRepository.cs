@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using RegistroAcademico.WebApi.Models;
 
 namespace RegistroAcademico.WebApi.DataAccess.Repositories

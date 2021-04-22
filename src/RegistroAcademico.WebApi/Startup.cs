@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +39,7 @@ namespace RegistroAcademico.WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RegistroAcademico.WebApi", Version = "v1" });
             });
 
-            services.AddTransient<IMateriaRepository,MateriaRepository>();
+            services.AddTransient<IUnitOfWork,UnitOfWork>();
         
         }
 
