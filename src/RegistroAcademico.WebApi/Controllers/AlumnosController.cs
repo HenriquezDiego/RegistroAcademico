@@ -19,7 +19,9 @@ namespace RegistroAcademico.WebApi.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            return null;
+            var estudiantes = _unitOfWork.Estudiantes.GetAll();
+            if(estudiantes == null) return BadRequest();
+            return Ok(estudiantes);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace RegistroAcademico.WebApi.DataAccess
 
         public IAsistenciaRepository Asistencias {get;}
 
+
         public UnitOfWork(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
