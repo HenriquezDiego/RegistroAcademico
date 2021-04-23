@@ -10,11 +10,17 @@ namespace RegistroAcademico.WebApi.DataAccess
 
         public IEstudianteRepository Estudiantes {get;}
 
+        public IMatriculaRepository Matriculas {get;}
+
+        public IAsistenciaRepository Asistencias {get;}
+
         public UnitOfWork(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
             Materias = new MateriaRepository(_appDbContext);
             Estudiantes = new EstudianteRepository(_appDbContext);
+            Matriculas = new MatriculaRepository(_appDbContext);
+            Asistencias = new AsistenciaRepository(_appDbContext);
         }
 
         public bool Complete()

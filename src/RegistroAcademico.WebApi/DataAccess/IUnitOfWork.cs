@@ -6,6 +6,8 @@ namespace RegistroAcademico.WebApi.DataAccess
     {
         IMateriaRepository Materias {get;}
         IEstudianteRepository Estudiantes {get;}
+        IMateriaRepository Matriculas {get;}
+        IAsistenciaRepository Asistencias {get;}
         bool Complete();
     }
 }
