@@ -60,7 +60,7 @@ namespace RegistroAcademico.WebApi.Controllers
             var estudiante = _unitOfWork.Estudiantes.Get(id);
             if(estudiante == null) return BadRequest();
             _unitOfWork.Estudiantes.Remove(estudiante);
-            if(_unitOfWork.Complete()) return Ok(estudiante);
+            if(_unitOfWork.Complete()) return NoContent();
             return StatusCode((int)HttpStatusCode.NotModified);
         }
     }
