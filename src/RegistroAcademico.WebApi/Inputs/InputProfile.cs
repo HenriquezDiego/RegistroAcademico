@@ -8,6 +8,7 @@ namespace RegistroAcademico.WebApi.Inputs
         public InputProfile()
         {
             CreateMap<MateriaInput,Materia>();
+            CreateMap<EstudianteInput,Estudiante>();
         }
     }
 }

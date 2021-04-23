@@ -7,10 +7,14 @@ namespace RegistroAcademico.WebApi.DataAccess
         private readonly AppDbContext _appDbContext;
 
         public IMateriaRepository Materias{get;}
+
+        public IEstudianteRepository Estudiantes {get;}
+
         public UnitOfWork(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
             Materias = new MateriaRepository(_appDbContext);
+            Estudiantes = new EstudianteRepository(_appDbContext);
         }
 
         public bool Complete()

@@ -9,12 +9,12 @@ namespace RegistroAcademico.WebApi.Controllers
 {
     [ApiController]
     [Route("api/[Controller]")]
-    public class MateriaController : ControllerBase
+    public class MateriasController : ControllerBase
     {
         public IMapper _mapper { get; }
         private readonly IUnitOfWork _unitOfWork;
 
-        public MateriaController(IUnitOfWork unitOfWork,
+        public MateriasController(IUnitOfWork unitOfWork,
         IMapper mapper)
         {
             _unitOfWork = unitOfWork;
